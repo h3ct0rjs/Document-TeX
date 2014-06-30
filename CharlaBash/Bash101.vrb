@@ -1,0 +1,7 @@
+\frametitle{tEST}
+
+\begin{lstlisting}[language=python]
+>>> from numpy import *
+>>> from numpy.fft import *
+>>> signal = array([-2., 8., -6., 4., 1., 0., 3., 5.])
+\end{lstlisting}

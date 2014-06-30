@@ -1,0 +1,125 @@
+\documentclass{beamer}
+%Bash Scripting Slides , This is part of the Research that I've been doing in UTP .
+%feedback : hfjimenez@utp.edu.co
+%
+
+\mode<presentation>
+{
+  \usetheme{CambridgeUS}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{seagull} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+%Language and Input encoding 
+\usepackage[spanish]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{listings}	%Resaltar Codigo 
+\usepackage{color}		%Colores para resaltar codigo
+
+\definecolor{mygreen}{rgb}{0,0.6,0} %Definicion de los tres colores 
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+
+	
+\title[Bash Scripting 101]{Bash Scripting 101}
+\author{H\'ector Fabio Jim\'enez S. @c1b3rh4ck}
+\institute{Semillero de Investigaci\'on Pulpa \\ UTP}
+\date{Enero de 2014}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Documento Empieza Aqui!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Uncomment these lines for an automatically generated outline.
+\begin{frame}{Agenda}
+  \tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Estructura de la charla :
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introducci\'on}
+\begin{frame}{Que es una shell?}
+
+\begin{exampleblock}{}
+  {\large ``Es un interprete de comandos que te permite introducir ordenes para comunicarse directamente con el nucleo.''}
+  
+    
+\end{exampleblock}
+
+%\vskip 1cm
+%\begin{block}{Examples}
+%Some examples of commonly used commands and features are included, to help you get started.
+%\end{block}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commands to include a figure:
+%\begin{figure}
+%\includegraphics[width=\textwidth]{your-figure's-file-name}
+%\caption{\label{fig:your-figure}Caption goes here.}
+%\end{figure}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Python Code }
+\begin{frame}[fragile]
+\frametitle{tEST}
+
+\begin{lstlisting}[language=python]
+>>> from numpy import *
+>>> from numpy.fft import *
+>>> signal = array([-2., 8., -6., 4., 1., 0., 3., 5.])
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Contacto}
+\begin{frame}{}
+
+\center{\Large{hfjimenez@utp.edu.co \\
+\vskip 1cm
+ @c1b3rh4ck }}
+ 
+ \section{Pausitas y Over}
+
+\end{frame}
+%EOF
+\end{document}

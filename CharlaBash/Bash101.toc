@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.32pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Introducci\'on}{3}{0}{1}
+\beamer@sectionintoc {2}{Some \textlatin {\LaTeX }{} Examples}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Tables and Figures}{4}{0}{2}
+\beamer@sectionintoc {3}{Python Code }{8}{0}{3}
+\beamer@sectionintoc {4}{Contacto}{9}{0}{4}
+\beamer@sectionintoc {5}{Pausitas y Over}{9}{0}{5}
