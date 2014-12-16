@@ -24,10 +24,6 @@ This repository has bee made using software for Windows and Gnu/Linux OS:
 ### Development
 This Development is doing mainly for Hector F. Jimenez in order to increase the LaTeX knowledge as a way of create nice reports.
 
-First Tab:
-```sh
-$ node app
-```
 
 ### Todo's
  - Write Tests
