@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.5)  5 DEC 2015 20:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.5)  5 DEC 2015 22:40
 entering extended mode
 **Articulo.tex
 (Articulo.tex
@@ -606,10 +606,7 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfig@top=\skip72
 \subfig@bottom=\skip73
 )
-(Articulo.aux
-LaTeX Info: Redefining \. on input line 7.
-LaTeX Info: Redefining \% on input line 7.
-)
+(Articulo.aux)
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 20.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 20.
 
@@ -736,16 +733,26 @@ LaTeX Font Info:    Try loading font information for U+txsyc on input line 21.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\utxsyc.fd"
 File: utxsyc.fd 2000/12/15 v3.1
 )
+
+LaTeX Warning: Reference `fig:cuartoreles' on page 1 undefined on input line 25
+.
+
 <images/relayroom.png, id=1, 867.24pt x 405.76593pt>
 File: images/relayroom.png Graphic file (type png)
 
 <use images/relayroom.png>
-Package pdftex.def Info: images/relayroom.png used on input line 28.
+Package pdftex.def Info: images/relayroom.png used on input line 33.
 (pdftex.def)             Requested size: 242.82555pt x 113.61368pt.
 
-Overfull \hbox (1.0823pt too wide) in paragraph at lines 28--29
+Overfull \hbox (1.0823pt too wide) in paragraph at lines 33--34
  [][] 
  []
+
+
+LaTeX Warning: Reference `fig:sci' on page 1 undefined on input line 47.
+
+
+LaTeX Warning: Reference `fig:sci' on page 1 undefined on input line 49.
 
 [1{C:/Users/gh0st3r/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
@@ -754,10 +761,10 @@ Overfull \hbox (1.0823pt too wide) in paragraph at lines 28--29
 File: images/sci.png Graphic file (type png)
 
 <use images/sci.png>
-Package pdftex.def Info: images/sci.png used on input line 47.
+Package pdftex.def Info: images/sci.png used on input line 60.
 (pdftex.def)             Requested size: 249.93314pt x 191.5903pt.
 
-Overfull \hbox (8.1899pt too wide) in paragraph at lines 47--48
+Overfull \hbox (8.1899pt too wide) in paragraph at lines 60--61
  [][] 
  []
 
@@ -765,93 +772,112 @@ Overfull \hbox (8.1899pt too wide) in paragraph at lines 47--48
 File: images/piramide.png Graphic file (type png)
 
 <use images/piramide.png>
-Package pdftex.def Info: images/piramide.png used on input line 57.
+Package pdftex.def Info: images/piramide.png used on input line 69.
 (pdftex.def)             Requested size: 213.79495pt x 121.95346pt.
-LaTeX Info: Redefining \. on input line 76.
-LaTeX Info: Redefining \% on input line 76.
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
  [2 <./images/sci.png> <./images/piramide.png>]
 <images/topologia.png, id=15, 426.09187pt x 287.57437pt>
 File: images/topologia.png Graphic file (type png)
 
 <use images/topologia.png>
-Package pdftex.def Info: images/topologia.png used on input line 85.
+Package pdftex.def Info: images/topologia.png used on input line 95.
 (pdftex.def)             Requested size: 255.65709pt x 172.54594pt.
 
-Overfull \hbox (13.91385pt too wide) in paragraph at lines 85--86
+Overfull \hbox (13.91385pt too wide) in paragraph at lines 95--96
  [][] 
  []
 
-<images/s71200.jpg, id=16, 676.02562pt x 702.37407pt>
+LaTeX Info: Redefining \. on input line 117.
+LaTeX Info: Redefining \% on input line 117.
+[3 <./images/topologia.png>]
+
+LaTeX Warning: Reference `prueba' on page 4 undefined on input line 120.
+
+
+Overfull \hbox (1.96678pt too wide) in paragraph at lines 128--129
+[]\T1/txr/m/n/10 Cantidad| 
+ []
+
+
+Overfull \hbox (2.51495pt too wide) in paragraph at lines 131--131
+[]\T1/txr/m/n/10 AllenBradley| 
+ []
+
+
+Overfull \hbox (6.04993pt too wide) in paragraph at lines 131--131
+[]\T1/txr/m/n/10 Administrativo| 
+ []
+
+
+LaTeX Warning: Reference `fig:s7200' on page 4 undefined on input line 137.
+
+
+LaTeX Warning: Reference `fig:s73002' on page 4 undefined on input line 137.
+
+
+LaTeX Warning: Reference `fig:simulacion' on page 4 undefined on input line 137
+.
+
+<images/s71200.jpg, id=19, 676.02562pt x 702.37407pt>
 File: images/s71200.jpg Graphic file (type jpg)
  <use images/s71200.jpg>
-Package pdftex.def Info: images/s71200.jpg used on input line 91.
+Package pdftex.def Info: images/s71200.jpg used on input line 141.
 (pdftex.def)             Requested size: 135.20271pt x 140.47232pt.
 
-<images/motorsimulacion.jpg, id=17, 670.75594pt x 660.21657pt>
+<images/motorsimulacion.jpg, id=20, 670.75594pt x 660.21657pt>
 File: images/motorsimulacion.jpg Graphic file (type jpg)
 
 <use images/motorsimulacion.jpg>
-Package pdftex.def Info: images/motorsimulacion.jpg used on input line 97.
+Package pdftex.def Info: images/motorsimulacion.jpg used on input line 147.
 (pdftex.def)             Requested size: 134.1488pt x 132.04097pt.
 
-<images/s73002.jpg, id=18, 1190.94937pt x 553.31718pt>
+<images/s73002.jpg, id=21, 1190.94937pt x 553.31718pt>
 File: images/s73002.jpg Graphic file (type jpg)
  <use images/s73002.jpg>
-Package pdftex.def Info: images/s73002.jpg used on input line 103.
+Package pdftex.def Info: images/s73002.jpg used on input line 153.
 (pdftex.def)             Requested size: 238.18565pt x 110.66147pt.
+LaTeX Info: Redefining \. on input line 168.
+LaTeX Info: Redefining \% on input line 168.
 
-Underfull \vbox (badness 1831) has occurred while \output is active []
+[4 <./images/s71200.jpg> <./images/motorsimulacion.jpg> <./images/s73002.jpg>]
 
-LaTeX Info: Redefining \. on input line 110.
-LaTeX Info: Redefining \% on input line 110.
- [3 <./images/topologia.png> <./images/s71200.jpg> <./images/motorsimulacion.jp
-g> <./images/s73002.jpg>]
-
-LaTeX Warning: Citation `Patricio2011' undefined on input line 143.
-
-
-LaTeX Warning: Citation `Zacarias2009' undefined on input line 143.
-
-
-LaTeX Warning: Citation `Alfonso2010b' undefined on input line 143.
-
-
-LaTeX Warning: Citation `Alfonso2010a' undefined on input line 143.
-
-
-Class apa6 Warning: \bibliographystyle command ignored on input line 150.
+Class apa6 Warning: \bibliographystyle command ignored on input line 169.
 
 No file Articulo.bbl.
 - LAST -
-Extra skip:11.21802pt
-Left:446.43604pt/2.165pt
-Right:435.21802pt/2.165pt
-Output:441.82703pt
-LaTeX Info: Redefining \. on input line 152.
-LaTeX Info: Redefining \% on input line 152.
-[4] (Articulo.aux
+Extra skip:0.0pt
+Left:58.0pt/2.165pt
+Right:58.0pt/2.165pt
+Output:59.0pt
+LaTeX Info: Redefining \. on input line 172.
+LaTeX Info: Redefining \% on input line 172.
+[5] (Articulo.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 )
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 6238 strings out of 494081
- 84648 string characters out of 3153766
- 164263 words of memory out of 3000000
- 9467 multiletter control sequences out of 15000+200000
+ 6231 strings out of 494081
+ 84542 string characters out of 3153766
+ 160263 words of memory out of 3000000
+ 9460 multiletter control sequences out of 15000+200000
  43227 words of font info for 81 fonts, out of 3000000 for 9000
  728 hyphenation exceptions out of 8191
- 43i,8n,40p,1132b,428s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,9n,40p,1061b,408s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/txfonts/rtxr.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
 mes/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Articulo.pdf (4 pages, 2525412 bytes).
+Output written on Articulo.pdf (5 pages, 2530809 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
+ 42 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
