@@ -17,9 +17,7 @@ This repository has bee made using software for Windows and Gnu/Linux OS:
 * [Vim Improved] - awesome Gnu/Linux text editor :) <3
 * [Ghostscript ] - is a high quality, high performance Postscript and PDF
     interpreter and rendering engine.
-* [Express] - fast node.js network app framework [@tjholowaychuk]
 * [Gulp] - the streaming build system
-* [keymaster.js] - awesome keyboard handler lib by [@thomasfuchs]
 
 ### Development
 This Development is doing mainly for Hector F. Jimenez in order to increase the LaTeX knowledge as a way of create nice reports.
