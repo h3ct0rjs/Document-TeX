@@ -17,16 +17,12 @@ This repository has bee made using software for Windows and Gnu/Linux OS:
 * [Vim Improved] - awesome Gnu/Linux text editor :) <3
 * [Ghostscript ] - is a high quality, high performance Postscript and PDF
     interpreter and rendering engine.
-* [Gulp] - the streaming build system
-
 ### Development
 This Development is doing mainly for Hector F. Jimenez in order to increase the LaTeX knowledge as a way of create nice reports.
-
 
 ### Todo's
  - Write Tests
  - Rethink Github Save
-
 
  
 License
