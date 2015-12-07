@@ -1,33 +1,36 @@
-\documentclass[jou,apacite]{apa6}   %Utilizamos Apa6 mas actualizada, de tipo jorunal.
-
+\documentclass[jou]{apa6}   %Utilizamos Apa6 mas actualizada, de tipo jorunal.
 \usepackage[utf8]{inputenc}       	%Encoding de Utf-8, por compatibilidad con mi vim.
 \usepackage[T1]{fontenc}			%Determina que tipo de fuente sera usado
 \usepackage[spanish]{babel}			%Idioma manejado para el articulo
+\usepackage{hyperref}				%Manejo de URLs
+\usepackage{apacite}				%Manejo de Referencias Cruzadas dentro del documento.
+%http://www.ctan.org/tex-archive/biblio/bibtex/contrib/apacite/apacite.pdf  mas info.
 \usepackage{subfigure} 				%Subfiguras
 \usepackage{graphicx}				%Necesario para el manejo de imagenes en el articulo.
 \DeclareGraphicsExtensions{.png,.jpg,.jpeg}%Extensiones Soportadas para las imagenes.
-
 %Las imagenes se encuentran en directorio de /images/, mas info en https://en.wikibooks.org/wiki/LaTeX/Importing_Graphics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Articulo comienza Aqui
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Descubriendo Controladores Lógicos Programables en una Red Universitaria} 
 \shorttitle{ Descubriendo PLC's en una Red Universitaria}
 \twoauthors{Héctor Fabio Jiménez Saldarriaga}{Sebastian Zapata Ruiz}
 \twoaffiliations{Universidad Tecnológica de Pereira, \\ Ingeniería de Sistemas y Computación, \\Pereira Security Team }{Universidad Tecnológica de Pereira, \\ Ingeniería de Sistemas y Computación}
 \keywords{Redes Industriales , Seguridad Informática, Controladores Lógicos}
-\abstract{El uso de los dispositivos electrónicos como los controladores lógicos programables  en el campo de la automatización y el control de procesos tienen un rol importante, estos se implementan en muchos campos, e industrias donde los procesos de producción y  administración son complicados,  críticos y peligrosos tanto económicamente como para la vida humana.  En este artículo evidenciamos cómo es posible realizar el descubrimiento de estos dispositivos en un entorno controlado que presenta múltiples PLC's, Computadores de Monitoreo corriendo bajo sistemas operativos Windows, en un	a infraestructura universitaria.}
+\abstract{El uso de los dispositivos electrónicos como los controladores lógicos programables  en el campo de la automatización y el control de procesos tienen un rol importante, estos se implementan en muchos campos, e industrias donde los procesos de producción y administración son complicados, críticos y peligrosos tanto económicamente como para la vida humana.  En este artículo evidenciamos cómo es posible realizar el descubrimiento de estos dispositivos en un entorno controlado que presenta múltiples PLC's, Computadores de Monitoreo, usuarios normales corriendo bajo sistemas operativos Windows, en una infraestructura universitaria.}
 \leftheader{Héctor F. Jiménez S., Sebastian Zapata R.} %Header en la parte superior.
 
 \begin{document}
 \maketitle    
                      
 \section{Introducción}
-Los controladores lógicos programables (\textit{Programmable logic controller}, de ahora en adelante PLC) fueron diseños en los años 60s[Ref1, Segovia]
+Los controladores lógicos programables (\textit{Programmable logic controller}, de ahora en adelante PLC) fueron diseños en los años 60s \cite{Vanessa}
 cuando el control de las maquinas industriales se hacía mediante el uso de relés como en la figura (\ref{fig:cuartoreles}), en ese entonces era tedioso
 y complicado para un técnico encontrar una falla en el sistema eléctrico de control debido a que todo los procesos se encontraban en cuartos llenos de  
 una gran cantidad de cables y relés, lo que dificultaba la búsqueda. Con la llegada de los  PLCs se resolvió el problema de la flexibilidad y solución 
 de problemas comunes; estos reemplazaron decenas de cuartos en pocos, albergando bloques compactos de PLC, con ventajas como fácil mantenimiento,
 instalación, expansión. Su labor principal es la regulación  los actuadores electromecánicos, como pueden ser válvulas, sensores, bombas, motores, etc.\\
-
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.28]{images/relayroom.png}
@@ -36,12 +39,11 @@ instalación, expansión. Su labor principal es la regulación  los actuadores e
 
 Los sistemas de control utilizan como uno de los elementos conformantes  a los PLCs  para regular procesos industriales  ejemplos de estas tareas se ve
 en lineas de producción de químicos, líneas de ensamble y manufactura, maniobra de maquinaria pesada,  control y manejo de señales, control de mezclas, 
-control de generación y despacho eléctrico entre otros(Referencia Porcentajes). En un principio de estos dispositivos se presentaba la situación de que 
+control de generación y despacho eléctrico entre otros. En un principio de estos dispositivos se presentaba la situación de que 
 cada PLC actúa como controlador individual e independiente, pero con el crecimiento y demanda de los procesos se requería tener conexiones con otros 
-PLCs, pero funcionando aun así en un contexto local, sin conexiones a redes corporativas o Internet(Ref ENISA, Protecting Industrial Control Systems). 
+PLCs, pero funcionando aun así en un contexto local, sin conexiones a redes corporativas o Internet\cite{Protecting}. 
 En los últimos 15 años con la globalización y la descentralización de las empresas que administran estos procesos se vuelve necesario tener que 
-conectar estos dispositivos mediante enlaces privados e infraestructura pública, sin tener en mente los pilares de la seguridad de la información, 
-confidencialidad, integridad, autenticidad.\\
+conectar estos dispositivos mediante enlaces privados e infraestructura pública, sin tener en mente los pilares de la seguridad de la información, confidencialidad, integridad, autenticidad.\\
 
 
 Una parte esencial de los sistemas de control industrial (de ahora en adelante SCI) son los sistemas SCADA (\textit{Supervisory Control and Data Acquisition}), responsables de obtener información relevante y basados en el análisis de esta información enviar instrucciones a los sistemas de producción. Los sistemas SCADA necesitan estar conectados en varias niveles topológicos dentro del sistema de control industrial,  ejemplo de ello se puede ver en la figura (\ref{fig:sci}). 
@@ -69,26 +71,44 @@ Un sistema SCADA típico consiste de diferentes partes. El algoritmo de control 
 \includegraphics[scale=0.4]{images/piramide.png}
 \caption{Piramide de Automatización,Niveles.} \label{fig:piramide}
 \end{figure}
-Para alcanzar el Sistema de supervisión se requiere de una computadora normal típicamente corriendo alguna versión de software SCADA  [ListofScadaRef] que permite realizar diagnósticos remotos, envió de instrucciones o reprogramación de control a los PLCs. Una base de datos de históricos almacena datos de los eventos presentados  en el pasado para evaluaciones futuras [RefTrendMicro]. 
+Para alcanzar el Sistema de supervisión se requiere de una computadora normal típicamente corriendo alguna versión de software SCADA (Ref)Rque permite realizar diagnósticos remotos, envió de instrucciones o reprogramación de control a los PLCs. Una base de datos de históricos almacena datos de los eventos presentados  en el pasado para evaluaciones futuras\cite{TrendMicro}. 
 
 Los SCADA hacen uso de protocolos de redes estandar para el transporte de administración y  programación de los comandos del PLC. Los protocolos también se utilizan para la comunicar entre PLCs. La conexión a las redes corporativas o Internet. Por ejemplo, para el \textit{mantenimiento remoto}: se realiza con frecuencia a través de protocolo estándar, como HTTP, Telnet o FTP. Conectividad en la capa de enlace que por lo general se lleva a cabo a través de Ethernet.
 
-Los protocolos mas usados para los sistemas SCADA son DNP3, ICCP (IEC 60870-6), Modbus, OPC (OLE for process control), Profibus,CIP, cada uno de estos posee distintas características y sistemas de seguridad, cifrado, aun así, cada uno posee diferentes vulnerabilidades a posibles ataques e inclusive algunos de ellos no realizan ninguna comprobación de seguridad.
+Los protocolos mas usados para los sistemas SCADA son DNP3, ICCP (\textit{IEC 60870-6}), Modbus, OPC (OLE para control de procesos), Profibus,CIP, cada uno de estos posee distintas características y sistemas de seguridad, cifrado, aun así, cada uno posee diferentes vulnerabilidades a posibles ataques e inclusive algunos de ellos no realizan ninguna comprobación de seguridad.
 
 \subsection{Problemas Generales de Seguridad en un SCI }
-Mencionar uno de las preguntas del nuestra investigación entorno a un SCI.
+Existen muchos problemas en los SCI, pero estos pueden verse afectados en dos clases principalmente :
+\begin{itemize}  
+\item Fallos lógicos.
+\item Fallos físicos.
+\end{itemize}
+Un intruso físico, dentro de un cuarto de control se dedicara a manipular los dispositivos,a pulsar botones para ver que sucede con una finalidad concreta, generalmente maliciosa, si desconoce el sistema. Un fallo lógico implica un intruso informático que se dedicara a hacer lo mismo pero de manera remota y pasando desapercibido por los supervisores y administradores de la red industrial.
+
+Si hacemos un listado de amenazas a las que se encuentra expuesto un SCI, las mas habituales según la literatura son :
+\begin{enumerate}
+\item Daños Físicos(Accidentales, o no)
+\item Sabotaje
+\item Terrorismo
+\item Fallos de diseño.
+\item Defectos de configuración e implementación.
+\item Intrusiones (Piratas, espionaje, robo de información por terceros, curiosos)
+\item Virus Informáticos y Malware en general
+\item Ataque ciberneticos.
+\end{enumerate}
+Muchos sistemas SCADA también se encuentran expuestos, esto representa uno de los principales problemas de seguridad pues muchos de estos se encuentran basado en protocolos de que no cuentan con los mecanismo de cifrado y codificación necesario. Ejemplo de ellos son los HMI que utilizan principalmente HTTP para operar. Como una reacción a las diferentes amenazas mencionadas anteriormente, la industria de la automatización y sistemas critico esta incorporando ciclos de desarrollo seguro tanto a nivel de hardware,software pero aun asi se ven problemas en el desarrollo de estas como lo menciona Eireann Leverett y Reid Wightman en(\cite{Eireann}).
 
 \section{Configuración del Análisis de Seguridad}
-Para el desarrollo de esta investigación seguiremos una metodología de seguridad como OSSTMM, además las propuestas prácticas de Dale Peterson(Referencia), Robert Graham, Paul Mcmillan, Dan Tencler (Referencia), y por supuesto recomendaciones del equipo de Zmap https://zmap.io/documentation.html\#bestpractices).
+Para el desarrollo de esta investigación seguiremos algunos  capitulos de la metodología de seguridad OSSTMM, además las propuestas prácticas de Dale Peterson(\cite{Dale}), Robert Graham, Paul Mcmillan, Dan Tencler (\cite{Robert}), y por supuesto recomendaciones del equipo de Zmap(ZakirWustrow)\footnote{Best Practices, \hyperref{''https://zmap.io/documentation.html\#bestpractices''}}.
 
-Es importante aclarar que el posicionamiento que se tomo es  interno, con una visibilidad blackbox esto significa que no contamos con ninguna inforamcion del objetivo, pero los dueños de la red tienen conocimientode que tipo de pruebas se realizara y cuando. Se adoptao un perfil de usuario normal, sin privilegios, hay que mencionar que nosotros obtuvimos los permisos legales para  llevar a cabo esta investigación pues es de realizar estas actividades sin el permiso correspondiente,  podría incurrir en algún acto tipificado como delito informático. El proceso se realizó en un entorno controlado(RefEntControlado) que implico solamente el escaneo de  algunas subredes de nuestra red universitaria, desconociendo la topología de la red como se menciono previamente. Se utilizo un computador portátil, y un mini servidor de escritorio ambos corriendo Debian Gnu/Linux, con procesadores Core2Duo, 2xCore I7,  4 y 8 Gb  de Ram, con tarjetas 100/1000, dual-port, conectados a la red que tienen acceso normalmente los estudiantes.
+Es importante aclarar que el posicionamiento que se tomo es  interno, con una visibilidad blackbox esto significa que no contamos con ninguna información del objetivo, pero los dueños de la red tienen conocimientode que tipo de pruebas se realizara y cuando. Se adopto un perfil de usuario normal, sin privilegios, hay que mencionar que nosotros obtuvimos los permisos legales para  llevar a cabo esta investigación pues es de realizar estas actividades sin el permiso correspondiente,  podría incurrir en algún acto tipificado como delito informático. El proceso se realizó en un entorno controlado(\cite{Jason}) que implico solamente el escaneo de  algunas subredes de nuestra red universitaria, desconociendo la topología de la red como se menciono previamente. Se utilizo un computador portátil, y un mini servidor de escritorio ambos corriendo Debian Gnu/Linux, con procesadores Core2Duo, 2xCore I7,  4 y 8 Gb  de Ram, con tarjetas 100/1000, dual-port, conectados a la red que tienen acceso normalmente los estudiantes.
 
 En el escaneo de puertos se emplearon las tres herramientas más populares que son:
-\begin{itemize}
-\item Zmap: Desarrollado por un equipo de tres científicos de computación en la universidad de Michigan, ellos son Ph.D  Akir Durumeric, Ph.D(c) Eric Wustrow, y J. Alex Halderman, Profesor asistente, el software se encuentra bajo la licencia de Apache Foundations.
-\item Masscan: Desarrollado por Robert David Graham el escáner de puertos más rápido del momento, que requiere de un computador con un procesador de 4 núcleos y una tarjeta ethernet dual-port de 10gbs, teóricamente puede transmitir 25 millones de paquetes por segundo, aunque en nuestras pruebas solo utilizamos 8 millones de paqueter por segundo para no congestionar y perjudicar la red, este software se encuentra licenciado bajo Gnu Gpl v3.
-\item Nmap: El scanner que más utilizamos en nuestra fase de reconocimiento activo,  es una herramienta de código abierto para exploración de red y auditoria de seguridad. Su líder de desarrollo es Fyodor, este escáner tiene una gran importancia en nuestra investigación puesto que posee un motor de scripting en el cual cargamos los scripts desarrollados por Digitalbond(Ref) una compañía que se encarga de asegurar sistemas y redes industriales.
-\end{itemize}
+\begin{description}
+\item [Zmap:] Desarrollado por un equipo de tres científicos de computación en la universidad de Michigan, ellos son Ph.D  Akir Durumeric, Ph.D(c) Eric Wustrow, y J. Alex Halderman, Profesor asistente, el software se encuentra bajo la licencia de Apache Foundations.
+\item [Masscan:] Desarrollado por Robert David Graham el escáner de puertos más rápido del momento, que requiere de un computador con un procesador de 4 núcleos y una tarjeta ethernet dual-port de 10gbs, teóricamente puede transmitir 25 millones de paquetes por segundo, aunque en nuestras pruebas solo utilizamos 8 millones de paqueter por segundo para no congestionar y perjudicar la red, este software se encuentra licenciado bajo Gnu Gpl v3.
+\item [Nmap:] El scanner que más utilizamos en nuestra fase de reconocimiento activo,  es una herramienta de código abierto para exploración de red y auditoria de seguridad. Su líder de desarrollo es Fyodor, este escáner tiene una gran importancia en nuestra investigación puesto que posee un motor de scripting en el cual cargamos los scripts desarrollados por Digitalbond una compañía que se encarga de asegurar sistemas y redes industriales.
+\end{description}
 El escaneo indica el estado de los puertos de las máquinas, dispositivos conectados a las redes, detectando y descubriendo si está abierto, cerrado, o protegido por un  cortafuegos. Esto nos puede indicar que tipo de servicio ofrece, y por lo tanto poder determinar la exposición de equipos vulnerables. La siguiente imagen presenta una topología aproximada, basados en los datos arrojados por las herramientas, y cantidad de saltos mostrados mediante tracert.
 \begin{figure}[htb]
 \centering
@@ -157,16 +177,14 @@ Algunos de las practicas se encontraban funcionando, si hubiéramos tomado una p
 \section{Conclusiones }
 En conclusión es posible hallar y descubrir dispositivos que regulan procesos críticos dentro de una red universitaria, se deben utilizar y aplicar las políticas y medidas de seguridad al respecto a este tipo de dispositivos y sistemas, pues estos dispositivos están constantemente conectados a la red de forma continua presentando riesgo de alto impacto para los estudiantes. Los sistemas SCADA hallados serán tan seguros como los  mecanismos de seguridad que incorporen sus protocolos o puedan aplicarse a los mismos. De nada sirve un firewall si no puede actuar sobre un determinado protocolo; como tampoco querer autenticar o cifrar el intercambio de datos sin la existencia de mecanismos intrínsecos de intercambio de claves.
 
-Los impactos de un ataque a este tipo de dispositivos estan diseñados para causa daños 
-fisico y criticos que podrian ser mucho mas severos que los ataques informaticos convencionales.
+Los impactos de un ataque a este tipo de dispositivos están diseñados para causa daños físico y críticos que podrían ser mucho mas severos que los ataques informáticos convencionales.
 
-http://blog.s21sec.com/2008/12/protocolos-scada-y-seguridad.html
-https://github.com/digitalbond/Redpoint
+%http://blog.s21sec.com/2008/12/protocolos-scada-y-seguridad.html Referecias.
+%https://github.com/digitalbond/Redpoint  Referencia
 
 \section{Agradecimientos }
 Los autores desean agradecer a esta universidad, al programa de Ingeniería de Sistemas y Computación y a la profesora Johana Carolina Ochoa por haber asesorado en las consultas y dudas presentadas durante el escrito de este articulo.Este trabajo de investigación y propuesta experimental fue financiado por los autores, a través del grupo de seguridad informatica Pereira Security Team. También expresar su mayor gratitud con todos aquellos profesores que aportaron y dieron sugerencias, Edison Duque Cardona, al administrador de la red Fabian Franco por su tiempo, Lic. Leidy Tabares Velosa por sus aportes en cuanto a la parte de delitos informáticos, y a todos que nos dieron todos sus comentarios sobre la propuesta. 
 \newpage
 \bibliographystyle{apacite} 
-\bibliography{references/biblio}
-
+\bibliography{bibliografia}% base de datos de las referencias usadas
 \end{document}
