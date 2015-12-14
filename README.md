@@ -5,28 +5,24 @@ This Repository aims to keep a copy of  :
 
   - Templates for Capture The Flag Contest, Reports.
   - Templates of Presentations.
-  - Templates of Test with LaTeX.
+  - Templates of test with LaTeX.
   - Copy of Ctf Files and Writeups.
 
 ### Tech
 
-This repository has bee made using software for Windows and Gnu/Linux OS:  
+This repository has been made using software for Windows and Gnu/Linux OS:  
 
 * [MiKTeX] - Home - MiKTeX Project Page!
 * [Texmaker] - awesome Windows text editor
 * [Vim Improved] - awesome Gnu/Linux text editor :) <3
 * [Ghostscript ] - is a high quality, high performance Postscript and PDF
     interpreter and rendering engine.
+
 ### Development
-This Development is doing mainly BY Hector F. Jimenez in order to increase the LaTeX knowledge as a way of create nice reports.
+This Development is doing mainly for me to increase the LaTeX knowledge as a way of create nice reports, articles, and personal templates.
 
-### Todo's
- - Write Tests
- - Rethink Github Save
+There is another contributors who are actually recognized properly.
 
- 
 License
 ----
 GPL V3.0 
-
-**Free Software, Hell Yeah!**
